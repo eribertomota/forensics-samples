@@ -21,46 +21,46 @@ and their metadata or carvers to recover deleted files.
 
 See below the content of "original-files":
 
-original-files/
-├── audio1
-│   ├── debian.mp3
-│   ├── debian.ogg
-│   └── debian.wav
-├── audio2
-│   ├── deleted.mp3
-│   ├── deleted.ogg
-│   └── deleted.wav
-├── movie1
-│   └── VID_20191220_170832.mp4
-├── movie2
-│   ├── movie-hello.avi
-│   ├── movie-hello.mp4
-│   ├── movie-hello.mpeg
-│   └── movie-hello.ogg
-├── pic1
-│   ├── debian.png
-│   ├── debian.ppm
-│   ├── debian.xcf
-│   ├── IMG_1054.JPG
-│   ├── IMG-20191006-WA0002.jpg
-│   └── IMG_20200827_231612.jpg
-├── pic2
-│   ├── d-debian.jpg
-│   ├── d-debian.png
-│   ├── d-debian.ppm
-│   ├── d-debian.xcf
-│   ├── IMG_20191224_234846.jpg
-│   ├── IMG_20200124_231153.jpg
-│   └── IMG_20200608_111614.jpg
-├── text1
-│   ├── a-text.docx
-│   ├── a-text.odt
-│   └── a-text.pdf
-└── text2
-    ├── d-text.docx
-    ├── d-text.odt
-    ├── d-text.pdf
-    └── test.sh
+    original-files/
+    ├── audio1
+    │   ├── debian.mp3
+    │   ├── debian.ogg
+    │   └── debian.wav
+    ├── audio2
+    │   ├── deleted.mp3
+    │   ├── deleted.ogg
+    │   └── deleted.wav
+    ├── movie1
+    │   └── VID_20191220_170832.mp4
+    ├── movie2
+    │   ├── movie-hello.avi
+    │   ├── movie-hello.mp4
+    │   ├── movie-hello.mpeg
+    │   └── movie-hello.ogg
+    ├── pic1
+    │   ├── debian.png
+    │   ├── debian.ppm
+    │   ├── debian.xcf
+    │   ├── IMG_1054.JPG
+    │   ├── IMG-20191006-WA0002.jpg
+    │   └── IMG_20200827_231612.jpg
+    ├── pic2
+    │   ├── d-debian.jpg
+    │   ├── d-debian.png
+    │   ├── d-debian.ppm
+    │   ├── d-debian.xcf
+    │   ├── IMG_20191224_234846.jpg
+    │   ├── IMG_20200124_231153.jpg
+    │   └── IMG_20200608_111614.jpg
+    ├── text1
+    │   ├── a-text.docx
+    │   ├── a-text.odt
+    │   └── a-text.pdf
+    └── text2
+        ├── d-text.docx
+        ├── d-text.odt
+        ├── d-text.pdf
+        └── test.sh
 
 ## How to use
 
@@ -72,8 +72,8 @@ metacam, etc.
 All filesystem images have a single partition starting at sector 2048. To
 mount it you can use:
 
- # unxz fs.<name>
- # mount -o ro,offset=1048576 fs.<name> /mnt
+    # unxz fs.<name>
+    # mount -o ro,offset=1048576 fs.<name> /mnt
 
 PS: 1048576 is equal to 2048 (start sector) * 512 (size of sector).
 
@@ -82,15 +82,15 @@ PS: 1048576 is equal to 2048 (start sector) * 512 (size of sector).
 This is an informational topic. Each image was created following these steps
 (example for ext4):
 
- $ dcfldd if=/dev/zero of=fs.ext4 bs=1M count=50
- # fdisk fs.ext4  (to create a single disk partition, starting in sector 2048)
- # losetup -fo $[2048*512] fs.ext4  (to create /dev/loop0 starting in 2048)
- # mkfs.ext4 -m .001 /dev/loop0
- # mount /dev/loop0 /mnt
- # ./generate-fs.sh /mnt/
- # umount /mnt
- # losetup -d /dev/loop0
- $ xz fs.ext4
+    $ dcfldd if=/dev/zero of=fs.ext4 bs=1M count=50
+    # fdisk fs.ext4  (to create a single disk partition, starting in sector 2048)
+    # losetup -fo $[2048*512] fs.ext4  (to create /dev/loop0 starting in 2048)
+    # mkfs.ext4 -m .001 /dev/loop0
+    # mount /dev/loop0 /mnt
+    # ./generate-fs.sh /mnt/
+    # umount /mnt
+    # losetup -d /dev/loop0
+    $ xz fs.ext4
 
 ## License
 
