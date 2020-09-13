@@ -14,7 +14,7 @@ when learning about forensics or testing tools.
 
 forensics-samples has several files inside "original-files" directory. There
 are some filesystem images available (currently: ext2, ext4, btrfs, NTFS,
-FAT2 (vfat) and extFAT). Inside each filesystem image, all files from
+FAT2 (vfat) and exFAT). Inside each filesystem image, all files from
 "original-files" were copied and, after this, all directories ending with
 "2" in their names were deleted. Is possible use tools to analyse the files
 and their metadata or carvers to recover deleted files.
@@ -66,7 +66,7 @@ See below the content of "original-files":
 
 Just download all repository or an isolated filesystem image and be happy.
 You can learn/test tools are foremost, magicrescue, scalpel, exifprobe,
-ext4magic, extundelete, ext3grep, sleuthkit, scrounge-ntfs, afflib-tools,
+ext4magic, extundelete, ext3grep, sleuthkit, disktype, afflib-tools,
 metacam, etc.
 
 All filesystem images have a single partition starting at sector 2048. To
@@ -100,7 +100,7 @@ movies and audio samples made by me, etc.
 
 You must to preserve the following copyright notice:
 
- Copyright 2019-2020 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
+    Copyright 2019-2020 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
 
 For all documents, pictures and movies inside "original-files", the license
 is CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0 International).
