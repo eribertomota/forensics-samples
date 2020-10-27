@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# fgdeploy
+# Copyright 2020 Joao Eriberto Mota Filho
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+function help() {
+cat << EOF
+    forensics-samples deploy tool for Debian
+    version 0.1
+
+    Usage: fsdeploy <file.xz>
+
+    PS: your system must provide a \$AUTOPKGTEST_TMP variable.
+EOF
+exit 1
+}
+
+# No file?
+[ "$1" ] || help
+
+# No $AUTOPKGTEST_TMP?
+[ "$AUTOPKGTEST_TMP" ] || help
+
+# File exist?
+TEST=$(ls /usr/share/forensics-samples/$1)
+[ "$TEST" ] || { echo File /usr/share/forensics-samples/$1 not found.; exit 1; }
+
+# unxz exist?
+TEST=$(unxz -h | grep decompress)
+[ "$TEST" ] || { echo Command unxz not found.; exit 1; }
+
+# Copy and decompress file
+cp /usr/share/forensics-samples/$1 $AUTOPKGTEST_TMP
+cd $AUTOPKGTEST_TMP
+unxz $AUTOPKGTEST_TMP/$1

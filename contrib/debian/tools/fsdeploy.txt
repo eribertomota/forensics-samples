@@ -1,0 +1,48 @@
+NAME
+  fsdeploy - deploy a disk image from forensics-samples
+
+SYNOPSIS
+  fsdeploy <file.xz>
+
+DESCRIPTION
+  fsdeploy is a command to provide a disk image from forensics-samples package
+  to a CI test environment in Debian.
+
+  fsdeploy will copy file.xz to $AUTOPKGTEST_TMP and unzip it, making the
+  selected file available for CI tests via autopkgtest command.
+
+  On Debian systems, forensics-samples-<filesystem> packages will depend of the
+  forensics-samples-tools, that provides fsdeploy command.
+
+OPTIONS
+  Possible values are: fs.btrfs.xz, fs.exfat.xz, fs.ext2.xz, fs.ext4.xz,
+  fs.ntfs.xz and fs.vfat.xz.
+
+EXAMPLE
+  See below an example of use from a debian/tests/control file:
+
+    Test-Command: fsdeploy fs.ntfs.xz;
+                  cd $AUTOPKGTEST_TMP;
+                  foremost -Tq fs.ntfs.xz;
+                  tree -C output-*
+    Depends: @, forensics-samples-ntfs, tree
+    Restrictions: allow-stderr
+
+  Now an example for mac-robber:
+
+    Test-Command: ls /dev/loop1 > /dev/null || exit 77;
+                  fsdeploy fs.btrfs.xz;
+                  cd $AUTOPKGTEST_TMP;
+                  mkdir mnt;
+                  mount -o ro,offset=1048576 fs.btrfs mnt;
+                  mac-robber mnt;
+                  umount mnt
+    Depends: @, forensics-samples-btrfs
+    Restrictions: needs-root, skippable
+
+AUTHOR
+  forensics-samples was written by Joao Eriberto Mota Filho and is available at
+  https://github.com/eribertomota/forensics-samples
+
+  This manual page was written by Joao Eriberto Mota Filho <eriberto@debian.org>
+  for the Debian project (but may be used by others).
