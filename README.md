@@ -55,6 +55,8 @@ See below the content of "original-files":
     ├── text1
     │   ├── a-text.docx
     │   ├── a-text.odt
+    │   ├── a-text-pass-A5d.pdf
+    │   ├── a-text-pass-peanuts.pdf
     │   └── a-text.pdf
     └── text2
         ├── d-text.docx
@@ -76,6 +78,9 @@ mount it you can use:
     # mount -o ro,offset=1048576 fs.<name> /mnt
 
 PS: 1048576 is equal to 2048 (start sector) * 512 (size of sector).
+
+The files a-text-pass-A5d.pdf and a-text-pass-peanuts.pdf are protected by
+passwords "A5d" and "peanuts". It can be used to test PDF crackers.
 
 ## Steps used to generate images
 
