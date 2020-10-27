@@ -1,3 +1,12 @@
+2020-10-27 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
+
+ Version 1.1
+
+ * Added fsdeploy from Debian as contrib.
+ * Added some new pictures.
+ * Added two PDF files protected by passwords. See the README file.
+ * Updated README file.
+
 2020-09-13 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
 
  Version 1.0.1
