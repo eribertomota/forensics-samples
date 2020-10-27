@@ -100,6 +100,8 @@ This is an informational topic. Each image was created following these steps
     # losetup -d /dev/loop0
     $ xz fs.ext4
 
+Note: BTRFS needs an image with 150 MB.
+
 ## License
 
 All files in this project were created by me. You can see my female Samoyed
