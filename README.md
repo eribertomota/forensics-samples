@@ -38,9 +38,12 @@ See below the content of "original-files":
     │   ├── movie-hello.mpeg
     │   └── movie-hello.ogg
     ├── pic1
+    │   ├── debian_logo.jpg
+    │   ├── debian_logo.png
     │   ├── debian.png
     │   ├── debian.ppm
     │   ├── debian.xcf
+    │   ├── empty.jpg
     │   ├── IMG_1054.JPG
     │   ├── IMG-20191006-WA0002.jpg
     │   └── IMG_20200827_231612.jpg
