@@ -13,8 +13,8 @@ when learning about forensics or testing tools.
 ## Content
 
 forensics-samples has several files inside "original-files" directory. There
-are some filesystem images available (currently: ext2, ext4, btrfs, NTFS,
-FAT2 (vfat) and exFAT). Inside each filesystem image, all files from
+are some filesystem images available (currently: btrfs, exFAT, ext2, ext4,
+NTFS and vfat (FAT32)). Inside each filesystem image, all files from
 "original-files" were copied and, after this, all directories ending with
 "2" in their names were deleted. Is possible use tools to analyse the files
 and their metadata or carvers to recover deleted files.
