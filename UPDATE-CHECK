@@ -3,3 +3,4 @@ When updating, change the following files (if needed):
 - ChangeLog
 - Check for spelling errors in ChangeLog, manpage and README.
 - Check final manpage with man command.
+- Rebuild all filesystem images.
