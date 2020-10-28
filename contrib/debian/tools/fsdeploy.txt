@@ -30,7 +30,7 @@ EXAMPLE
 
   Now an example for mac-robber:
 
-    Test-Command: ls /dev/loop1 > /dev/null || exit 77;
+    Test-Command: ls /dev/loop0 > /dev/null || exit 77;
                   fsdeploy fs.btrfs.xz;
                   cd $AUTOPKGTEST_TMP;
                   mkdir mnt;
