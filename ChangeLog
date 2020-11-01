@@ -3,8 +3,11 @@
  Version 1.1
 
  * Added fsdeploy from Debian as contrib.
+ * Added new option to fsdeploy: original-files.
  * Added some new pictures.
  * Added two PDF files protected by passwords. See the README file.
+ * Created fs.multiple.
+ * Updated manpage.
  * Updated README file.
 
 2020-09-13 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
