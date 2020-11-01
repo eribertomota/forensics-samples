@@ -21,12 +21,23 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Version 0.2 - 31 Oct 2020
+#
+# * Add original-files as option.
+#
+# Version 0.1 - 16 Sep 2020
+#
+# * Initial release.
+
 function help() {
 cat << EOF
+
     forensics-samples deploy tool for Debian
-    version 0.1
+    version 0.2
 
     Usage: fsdeploy <file.xz>
+           or
+           fsdeploy original-files
 
     PS: your system must provide a \$AUTOPKGTEST_TMP variable.
 EOF
@@ -37,17 +48,17 @@ exit 1
 [ "$1" ] || help
 
 # No $AUTOPKGTEST_TMP?
-[ "$AUTOPKGTEST_TMP" ] || help
+[ "$AUTOPKGTEST_TMP" ] || { echo ERROR: \$AUTOPKGTEST_TMP not found.; help; }
 
 # File exist?
 TEST=$(ls /usr/share/forensics-samples/$1)
-[ "$TEST" ] || { echo File /usr/share/forensics-samples/$1 not found.; exit 1; }
+[ "$TEST" ] || { echo ERROR: File /usr/share/forensics-samples/$1 not found.; help; }
 
 # unxz exist?
 TEST=$(unxz -h | grep decompress)
-[ "$TEST" ] || { echo Command unxz not found.; exit 1; }
+[ "$TEST" ] || { echo ERROR: Command unxz not found.; help; }
 
 # Copy and decompress file
-cp /usr/share/forensics-samples/$1 $AUTOPKGTEST_TMP
+cp -a /usr/share/forensics-samples/$1 $AUTOPKGTEST_TMP
 cd $AUTOPKGTEST_TMP
-unxz $AUTOPKGTEST_TMP/$1
+[ "$1" != "original-files" ] && unxz $1
