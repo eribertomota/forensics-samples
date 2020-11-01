@@ -13,7 +13,7 @@ DESCRIPTION
   selected file available for CI tests via autopkgtest command. It also can
   copy original-files to $AUTOPKGTEST_TMP (no unzip needed).
 
-  On Debian systems, forensics-samples-<filesystem> and forensics-samples-original-files
+  On Debian systems, forensics-samples-<filesystem> and forensics-samples-files
   packages will depend of the forensics-samples-tools, that provides fsdeploy
   command.
 
