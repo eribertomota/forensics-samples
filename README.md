@@ -124,8 +124,12 @@ You must to preserve the following copyright notice:
 
     Copyright 2019-2020 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
 
-For all documents, pictures and movies inside "original-files", the license
-is CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0 International).
+For all documents, pictures and movies inside "original-files" and
+"original-multiple", the license is CC-BY-SA-4.0 (Creative Commons
+Attribution-ShareAlike 4.0 International), except for debian_logo.jpg and
+debian_logo.png, taken from Debian Project, Copyright 1999 Software in the
+Public Interest, Inc., and under LGPL-3+ or CC BY-SA 3.0. See details in
+https://www.debian.org/logos/.
 
 For all other files (including "original-files/text2/test.sh") and filesystem
 images, the license is MIT.
