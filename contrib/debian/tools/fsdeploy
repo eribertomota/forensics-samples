@@ -21,9 +21,13 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Version 0.3 - 01 Nov 2020
+#
+# * Added 'exit 0' to avoid errors with autopkgtest command.
+#
 # Version 0.2 - 31 Oct 2020
 #
-# * Add original-files as option.
+# * Added original-files as option.
 #
 # Version 0.1 - 16 Sep 2020
 #
@@ -62,3 +66,5 @@ TEST=$(unxz -h | grep decompress)
 cp -a /usr/share/forensics-samples/$1 $AUTOPKGTEST_TMP
 cd $AUTOPKGTEST_TMP
 [ "$1" != "original-files" ] && unxz $1
+
+exit 0
