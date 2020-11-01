@@ -1,5 +1,13 @@
 2020-11-01 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
 
+ Version ?
+
+ * fsdeploy:
+     - Added a new example in manpage.
+     - Added 'exit 0' to avoid errors with autopkgtest command on Debian.
+
+2020-11-01 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
+
  Version 1.1.1
 
  * Fixed a Debian package name in fsdeploy manpage.
