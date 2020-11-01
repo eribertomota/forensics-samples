@@ -23,7 +23,7 @@ OPTIONS
 
   fs.multiple.xz has some filesystems.
 
-EXAMPLE
+EXAMPLES
   See below an example of use from a debian/tests/control file:
 
     Test-Command: fsdeploy fs.ntfs.xz;
@@ -32,6 +32,7 @@ EXAMPLE
                   tree -C output-*
     Depends: @, forensics-samples-ntfs, tree
     Restrictions: allow-stderr
+
 
   Now an example for mac-robber:
 
@@ -50,6 +51,14 @@ EXAMPLE
     # isolation-machine will provide access to /dev/loop.
     # rw-build-tree allow autopkgtest run several times.
     Restrictions: isolation-machine, needs-root, rw-build-tree, skippable
+
+
+  Example for disktype command:
+
+    Test-Command: fsdeploy fs.multiple.xz;
+                  cd $AUTOPKGTEST_TMP;
+                  disktype fs.multiple
+    Depends: @, forensics-samples-multiple
 
 AUTHOR
   forensics-samples was written by Joao Eriberto Mota Filho and is available at
