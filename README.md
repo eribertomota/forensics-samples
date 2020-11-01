@@ -67,6 +67,18 @@ See below the content of "original-files":
         ├── d-text.pdf
         └── test.sh
 
+There is also a file called fs.multiple.xz. This file has some partitions and
+filesystems. See below the structure:
+
+                   Sector  Filesystem
+    Partition 1      2048  btrfs
+    Partition 2    227328  ext4
+    Partition 3    309248  exfat
+    Partition 4    391168  ntfs
+
+Each sector has 512 bytes. Each filesystem has two files: logo_debian.jpg and
+test.txt. The original files are in original-multiple directory.
+
 ## How to use
 
 Just download all repository or an isolated filesystem image and be happy.
@@ -85,7 +97,7 @@ PS: 1048576 is equal to 2048 (start sector) * 512 (size of sector).
 The files a-text-pass-A5d.pdf and a-text-pass-peanuts.pdf are protected by
 passwords "A5d" and "peanuts". It can be used to test PDF crackers.
 
-## Steps used to generate images
+## Steps to generate images
 
 This is an informational topic. Each image was created following these steps
 (example for ext4):
