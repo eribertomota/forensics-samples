@@ -1,6 +1,6 @@
 2020-11-01 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
 
- Version ?
+ Version 1.1.1
 
  * Fixed a Debian package name in fsdeploy manpage.
  * Updated copyright notice in README file.
