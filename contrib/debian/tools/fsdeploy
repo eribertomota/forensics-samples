@@ -21,6 +21,10 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Version 0.4 - 03 Nov 2020
+#
+# * Updated the manpage.
+#
 # Version 0.3 - 01 Nov 2020
 #
 # * Added 'exit 0' to avoid errors with autopkgtest command.
@@ -37,7 +41,7 @@ function help() {
 cat << EOF
 
     forensics-samples deploy tool for Debian
-    version 0.2
+    version 0.4
 
     Usage: fsdeploy <file.xz>
            or

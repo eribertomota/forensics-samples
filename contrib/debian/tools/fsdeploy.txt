@@ -24,7 +24,7 @@ OPTIONS
   fs.multiple.xz has some filesystems.
 
 EXAMPLES
-  See below an example of use from a debian/tests/control file:
+  See below an example of a possible debian/tests/control file for foremost:
 
     Test-Command: fsdeploy fs.ntfs.xz;
                   cd $AUTOPKGTEST_TMP;
@@ -40,7 +40,7 @@ EXAMPLES
                   mac-robber $AUTOPKGTEST_TMP | grep a-text
     Depends: @, forensics-samples-files
     
-    Test-Command: ls /dev/loop0 > /dev/null || exit 77;
+    Test-Command: [ -e /dev/loop0 ] || exit 77;
                   fsdeploy fs.ext4.xz;
                   cd $AUTOPKGTEST_TMP;
                   mkdir mnt;
@@ -48,10 +48,13 @@ EXAMPLES
                   mac-robber mnt | grep a-text;
                   umount mnt
     Depends: @, forensics-samples-ext4
-    # isolation-machine will provide access to /dev/loop.
+    # isolation-machine will provide access to /dev/loop0, essential to mount
+    # images using the mount command.
     # rw-build-tree allow autopkgtest run several times.
-    Restrictions: isolation-machine, needs-root, rw-build-tree, skippable
+    Restrictions: allow-stderr, isolation-machine, needs-root, rw-build-tree, skippable
 
+  Note that Debian CI environments commonly are not able to run
+  isolation-machine. Consequently, the test will be skipped.
 
   Example for disktype command:
 

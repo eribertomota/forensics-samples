@@ -16,9 +16,9 @@ txt2man -d "$T2M_DATE" -t $T2M_NAME -r $T2M_NAME-$T2M_VERSION -s $T2M_LEVEL -v "
 #--------------------------------------------------------
 
 # Put here all data for your first manpage (in T2M lines)
-T2M_DATE="01 Nov 2020"
+T2M_DATE="03 Nov 2020"
 T2M_NAME=fsdeploy
-T2M_VERSION=0.3
+T2M_VERSION=0.4
 T2M_LEVEL=1
 T2M_DESC="deploy a disk image from forensics-samples"
 create-man
