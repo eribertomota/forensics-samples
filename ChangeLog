@@ -1,6 +1,6 @@
 2020-11-07 Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
 
- Version ?
+ Version 1.1.4
 
  * fs.multiple.xz: fixed partition label for exFAT and NTFS.
 
